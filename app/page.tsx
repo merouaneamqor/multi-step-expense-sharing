@@ -75,8 +75,8 @@ export default function Component() {
 
   const optimizeSettlements = (balances: Balance): Settlement[] => {
     const settlements: Settlement[] = []
-    const debtors = Object.entries(balances).filter(([_, balance]) => balance < 0)
-    const creditors = Object.entries(balances).filter(([_, balance]) => balance > 0)
+    const debtors = Object.entries(balances).filter(([, balance]) => balance < 0)
+    const creditors = Object.entries(balances).filter(([, balance]) => balance > 0)
 
     debtors.sort((a, b) => a[1] - b[1])
     creditors.sort((a, b) => b[1] - a[1])
